@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Button } from "./components";
 
-function App() {
+export const App = () => {
+  const [value, setValue] = useState("1");
   return (
     <div className="App">
       <header className="App-header">
@@ -9,6 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Button value={value} setValue={setValue} />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -20,6 +24,4 @@ function App() {
       </header>
     </div>
   );
-}
-
-export default App;
+};
